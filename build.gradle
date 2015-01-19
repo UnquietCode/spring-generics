@@ -1,9 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
-group = 'unquietcode.tools.spring'
+
+group = 'com.unquietcode.tools.spring'
 version = '4.1.4'
-
 sourceCompatibility = 1.7
 
 task wrapper(type: Wrapper) {
@@ -11,6 +12,33 @@ task wrapper(type: Wrapper) {
   distributionUrl = 'http://services.gradle.org/distributions/gradle-2.2.1-all.zip'
 }
 
-repositories {
-    mavenCentral()
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from javadoc.destinationDir
+}
+
+artifacts {
+	archives sourcesJar
+	archives javadocJar
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			artifact sourcesJar
+			artifact javadocJar
+		}
+	}
+
+	repositories {
+		maven {
+			url "$buildDir/repo"
+		}
+	}
 }
