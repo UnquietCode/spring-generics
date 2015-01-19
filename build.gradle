@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+
+group = 'unquietcode.tools.spring'
+version = '4.1.4'
+
+sourceCompatibility = 1.7
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.2.1'
+  distributionUrl = 'http://services.gradle.org/distributions/gradle-1.9-all.zip'
+}
+
+repositories {
+    mavenCentral()
+}
