@@ -1,17 +1,16 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
-
+apply plugin: 'signing'
 
 group = 'com.unquietcode.tools.spring'
 version = '4.1.4'
 sourceCompatibility = 1.7
 
-task wrapper(type: Wrapper) {
-  gradleVersion = '2.2.1'
-  distributionUrl = 'http://services.gradle.org/distributions/gradle-2.2.1-all.zip'
-}
 
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.3'
+}
 
 task sourcesJar(type: Jar, dependsOn: classes) {
 	classifier = 'sources'
@@ -28,6 +27,10 @@ artifacts {
 	archives javadocJar
 }
 
+def AorB = { String a, String b ->
+	return a != null && !a.trim().isEmpty() ? a : b;
+}
+
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
@@ -39,7 +42,11 @@ publishing {
 
 	repositories {
 		maven {
-			url "$buildDir/repo"
+			url AorB(System.getProperty("maven.deploy.repository"), "$buildDir/repo")
 		}
 	}
+}
+
+signing {
+	sign configurations.archives
 }
