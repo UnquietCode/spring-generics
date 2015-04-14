@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'maven'
-apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
 group = 'com.unquietcode.tools.spring'
@@ -27,22 +26,46 @@ artifacts {
 	archives javadocJar
 }
 
-def AorB = { String a, String b ->
-	return a != null && !a.trim().isEmpty() ? a : b;
-}
-
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
-			artifact sourcesJar
-			artifact javadocJar
-		}
-	}
-
+uploadArchives {
 	repositories {
-		maven {
-			url AorB(System.getProperty("maven.deploy.repository"), "$buildDir/repo")
+		mavenDeployer {
+			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+				authentication(userName: ossrhUsername, password: ossrhPassword)
+			}
+
+			snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+				authentication(userName: ossrhUsername, password: ossrhPassword)
+			}
+
+			pom.project {
+				name 'Spring Generics'
+				packaging 'jar'
+				description 'Procedurally extracted version of the Spring Framework\'s wonderful generics utilities.'
+				url 'https://github.com/UnquietCode/spring-generics'
+
+				scm {
+					connection 'scm:git:https://github.com/UnquietCode/spring-generics.git'
+					developerConnection 'scm:git:https://github.com/UnquietCode/spring-generics.git'
+					url 'https://github.com/SomMeri/less4j'
+				}
+
+				licenses {
+					license {
+						name 'The Apache License, Version 2.0'
+						url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+					}
+				}
+
+				developers {
+					developer {
+						id 'unquietcode'
+						name 'Benjamin Fagin'
+						email 'blouis@unquietcode.com'
+					}
+				}
+			}
 		}
 	}
 }
