@@ -13,18 +13,10 @@ the original Spring release version from where the code was extracted. Package n
 the innocent. There are no transitive dependencies to worry about either.
 
 ## Usage
-Currently available in the UnquietCode Maven repository. To use, add the following to your build script:
+The dependencies are deployed to Maven Central. To use, add the following to your build script:
 
 ### Maven
 ```xml
-<repository>
-  <id>uqc</id>
-  <name>UnquietCode Repository</name>
-  <url>http://www.unquietcode.com/maven/releases</url>
-</repository>
-
-...
-
 <dependency>
   <groupId>com.unquietcode.tools.spring</groupId>
   <artifactId>spring-generics</artifactId>
@@ -34,14 +26,6 @@ Currently available in the UnquietCode Maven repository. To use, add the followi
 
 ### Gradle
 ```groovy
-repositories {
-  maven {
-    url 'http://www.unquietcode.com/maven/releases'
-  }
-}
-
-...
-
 dependencies {
   compile 'com.unquietcode.tools.spring:spring-generics:4.1.4'
 }

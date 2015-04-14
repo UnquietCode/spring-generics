@@ -48,7 +48,7 @@ uploadArchives {
 				scm {
 					connection 'scm:git:https://github.com/UnquietCode/spring-generics.git'
 					developerConnection 'scm:git:https://github.com/UnquietCode/spring-generics.git'
-					url 'https://github.com/SomMeri/less4j'
+					url 'https://github.com/UnquietCode/spring-generics'
 				}
 
 				licenses {
