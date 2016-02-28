@@ -1,4 +1,4 @@
-# Spring Generics (v4.1.4)
+# Spring Generics (v4.2.5)
 
 [![Tip with Gratipay](https://assets.gratipay.com/gratipay.svg)](https://gratipay.com/UnquietCode) [![Tip with Bitcoin](http://www.unquietcode.com/e_e/bitcoin.png)](https://blockchain.info/address/1Ec6mzLpJQvuzXqhxfJz1h9ZwJmoHMW9BX)**Bitcoin**
 
@@ -20,13 +20,13 @@ The dependencies are deployed to Maven Central. To use, add the following to you
 <dependency>
   <groupId>com.unquietcode.tools.spring</groupId>
   <artifactId>spring-generics</artifactId>
-  <version>4.1.4</version>
+  <version>4.2.5</version>
 </dependency>
 ```
 
 ### Gradle
 ```groovy
 dependencies {
-  compile 'com.unquietcode.tools.spring:spring-generics:4.1.4'
+  compile 'com.unquietcode.tools.spring:spring-generics:4.2.5'
 }
 ```
