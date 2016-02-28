@@ -1,4 +1,4 @@
-# Spring Generics (v4.2.5)
+# Spring Generics (v4.2.5)  [![Build Status](https://travis-ci.org/UnquietCode/spring-generics.png?branch=master)](https://travis-ci.org/UnquietCode/spring-generics)
 
 [![Tip with Gratipay](https://assets.gratipay.com/gratipay.svg)](https://gratipay.com/UnquietCode) [![Tip with Bitcoin](http://www.unquietcode.com/e_e/bitcoin.png)](https://blockchain.info/address/1Ec6mzLpJQvuzXqhxfJz1h9ZwJmoHMW9BX)**Bitcoin**
 
