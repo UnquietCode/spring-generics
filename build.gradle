@@ -70,6 +70,9 @@ uploadArchives {
 	}
 }
 
-signing {
-	sign configurations.archives
+// code signing
+if (System.getProperty("do.sign") != null) {
+	signing {
+		sign configurations.archives
+	}
 }
