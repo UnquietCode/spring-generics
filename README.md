@@ -2,7 +2,7 @@
 
 [![Tip with Gratipay](https://assets.gratipay.com/gratipay.svg)](https://gratipay.com/UnquietCode) [![Tip with Bitcoin](http://www.unquietcode.com/e_e/bitcoin.png)](https://blockchain.info/address/1Ec6mzLpJQvuzXqhxfJz1h9ZwJmoHMW9BX)**Bitcoin**
 
-This library is a procedurally (eg 'shaded') extraction of the generics utilities from the `spring-core` module of
+This library is a procedural extraction (eg 'shaded jar') comprised of the generics utilities from the `spring-core` module of
 the [Spring Framework](https://github.com/spring-projects/spring-framework) project. Spring has some of the smartest
 generics resolution code available, but most developers are reluctant to bring a larger dependency like `spring-core`
 into their projects. Additionally, with so many users of Spring there is a higher chance of a problem arising due to
