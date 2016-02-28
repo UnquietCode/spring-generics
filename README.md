@@ -11,6 +11,7 @@ By repackaging select Spring classes, the aforementioned problems are easily avo
 the original Spring release version from where the code was extracted. Package names have been changed to protect
 the innocent. There are no transitive dependencies to worry about either.
 
+
 ## Usage
 The dependencies are deployed to Maven Central. To use, add the following to your build script:
 
@@ -29,3 +30,8 @@ dependencies {
   compile 'com.unquietcode.tools.spring:spring-generics:4.2.5'
 }
 ```
+
+
+## License
+This module is licensed under the Apache License 2.0, matching the license used
+by the actual Spring Framework project.
